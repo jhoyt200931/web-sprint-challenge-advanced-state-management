@@ -1,7 +1,14 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-class App extends Component {
-  render() {
+import { getSmurfs } from '../actions/SmurfAction'
+
+
+const App = () => {
+
+  useEffect(() => {
+    getSmurfs();
+  }, [])
+  
     return (
       <div className="App">
         <h1>SMURFS! W/Redux</h1>
@@ -10,7 +17,7 @@ class App extends Component {
         <div>Have fun!</div>
       </div>
     );
-  }
+  
 }
 
 export default App;
